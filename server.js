@@ -52,14 +52,11 @@ app.post('/api/tables', (req, res) => {
 });
 
 app.delete("/api/clear", (req, res) =>{
-    console.log(tables);
-    console.log(waitlist);
-    
+   
     tables.splice(0, tables.length);
     waitlist.splice(0, waitlist.length);
-    console.log(tables);
-    console.log(waitlist);
-    res.send();
+    
+    res.sendStatus(201);
     
 })
 
