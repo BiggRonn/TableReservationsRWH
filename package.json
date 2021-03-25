@@ -1,0 +1,26 @@
+{
+  "name": "TableReservationsRWH",
+  "version": "1.0.0",
+  "description": "Reserve a seat at a table, when seats are full it will add to a wait list",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BiggRonn/TableReservationsRWH.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BiggRonn/TableReservationsRWH/issues"
+  },
+  "homepage": "https://github.com/BiggRonn/TableReservationsRWH#readme"
+}
