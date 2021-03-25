@@ -10,48 +10,9 @@ const PORT = 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const tables = [
-    {
-    customerName : "Mark",
-    customerEmail: "what@ever.com",
-    phoneNumber: "927-978-0352",
-    customerID: "mark123",
-},
-{
-    customerName : "Mark",
-    customerEmail: "what@ever.com",
-    phoneNumber: "927-978-0352",
-    customerID: "mark123",
-},
-{
-    customerName : "Mark",
-    customerEmail: "what@ever.com",
-    phoneNumber: "927-978-0352",
-    customerID: "mark123",
-},
-{
-    customerName : "Mark",
-    customerEmail: "what@ever.com",
-    phoneNumber: "927-978-0352",
-    customerID: "mark123",
-},
-{
-    customerName : "Mark",
-    customerEmail: "what@ever.com",
-    phoneNumber: "927-978-0352",
-    customerID: "mark123",
-}
-]
+const tables = [];
 
-const waitlist = [
-    {
-        customerName : "Mark345",
-        customerEmail: "what@ever.co364346346m",
-        phoneNumber: "927-9736365",
-        customerID: "mark375475723",
-    }
-
-]
+const waitlist = [];
 
 
 // Routes
@@ -79,15 +40,28 @@ app.post('/api/tables', (req, res) => {
 
         if (tables.length === 5){
             waitlist.push(newTable)
-            
+            res.send(false)
         }else
         {
             tables.push(newTable);
+            res.send(true)
         }
 
 
-  res.json(newTable);
+  
 });
+
+app.delete("/api/clear", (req, res) =>{
+    console.log(tables);
+    console.log(waitlist);
+    
+    tables.splice(0, tables.length);
+    waitlist.splice(0, waitlist.length);
+    console.log(tables);
+    console.log(waitlist);
+    res.send();
+    
+})
 
 // Starts the server to begin listening
 
